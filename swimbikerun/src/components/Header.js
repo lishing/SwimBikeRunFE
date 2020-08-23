@@ -1,24 +1,24 @@
 import React, { Component } from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
+import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export class Header extends Component {
-    handleClick = () =>{
-        this.props.handleClick()
-    }
     render() {
         return (
-            <div>
+            <div class="top">
                 <Jumbotron>
-                    <h1>Hello, world!</h1>
+                    <h1>Starting out should not be hard</h1>
                     <p>
-                        This is a simple hero unit, a simple jumbotron-style component for calling
-                        extra attention to featured content or information.
+                        Discover the best hacks, tips and tricks for triathlon. 
+                        Contribute your ideas to help other athletes as well.
                     </p>
                     <p>
-                        <Button variant="primary">Learn more</Button>
+                        <Button variant="primary">Add a Tip</Button>
                     </p>
                 </Jumbotron>
+
                 
             </div>
         )

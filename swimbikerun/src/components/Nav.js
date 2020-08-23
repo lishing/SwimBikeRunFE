@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
-export class TagsHeader extends Component {
+export class Nav extends Component {
     render() {
         return (
-            <div>
+            <div className="nav">
                 <ul className='nav-links'> 
                     <Link to="/about">
                         <li>About</li>
                     </Link>
                     <Link to="/tips">
-                        <li>Tips</li>
+                        <li>Browse Tips</li>
                     </Link>
                 </ul>
             </div>
@@ -18,4 +19,4 @@ export class TagsHeader extends Component {
     }
 }
 
-export default TagsHeader
+export default Nav
