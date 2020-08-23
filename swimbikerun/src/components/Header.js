@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export class Header extends Component {
     render() {
         return (
-            <div class="top">
+            <div className="top">
                 <Jumbotron>
                     <h1>Starting out should not be hard</h1>
                     <p>
@@ -18,8 +18,6 @@ export class Header extends Component {
                         <Button variant="primary">Add a Tip</Button>
                     </p>
                 </Jumbotron>
-
-                
             </div>
         )
     }

@@ -1,13 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
+import TipsInfo from './TipsInfo.js';
 
-export class TipsList extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Tips</h1>  
-            </div>
-        )
-    }
+
+const TipsList = (props) =>{
+    return(
+        <div className="tips-container">
+            {props.tips.map((tips, index) =>
+            <TipsInfo 
+            key={index}
+            title={tips.title}
+            id={tips._id}
+            description={tips.description}
+            tags={tips.tags} />
+        )}
+        </div>
+    )  
 }
 
-export default TipsList
+
+export default TipsList;
