@@ -10,8 +10,11 @@ export class Nav extends Component {
                     <Link to="/about">
                         <li>About</li>
                     </Link>
-                    <Link to="/tips">
-                        <li>Browse Tips</li>
+                    <Link to="/fav">
+                        <li>Your Favourites</li>
+                    </Link>
+                    <Link to="/new">
+                        <li>Add a Tip</li>
                     </Link>
                 </ul>
             </div>
