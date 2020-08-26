@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Nav from './Nav.js';
 import Header from './Header.js';
 import TipsList from './TipsList.js';
+import api from '../api/index'
 
 const tips = [
     {
@@ -21,7 +22,7 @@ class LandingPage extends Component {
         }
     }
       componentDidMount = async () =>{
-        const allTipsList = tips
+        const allTipsList = await api.getAllTips()
         this.setState({
           allTips: allTipsList,
           displayAllTips : true

@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import '../App.css'
 import TipsList from './TipsList'
-import axious from 'axious'
+import api from '../api/index.js'
 
 class TipNew extends Component {
     constructor(props) {
@@ -20,12 +20,13 @@ class TipNew extends Component {
             [event.target.name]: event.target.value
         })
     }
-
     submitHandler = event =>{
         event.preventDefault()
         console.log(this.state)
-        axious.post('the url of mongodb!', this.state) //edit with mongodb link, should i use URL?
-        .then(response) 
+        const submit = api.createNewTip(this.state) 
+        if (submit){
+            window.location.href = '/'
+        }
     }
     render() {
         const { title, tags, description } = this.state
