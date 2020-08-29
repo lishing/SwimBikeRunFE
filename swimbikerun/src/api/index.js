@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 const api = Axios.create({
-    withCredentials: true,
+    //withCredentials: true,
     baseURL: 'http://localhost:4000',
     //baseURL: process.env.REACT_APP_BACKEND_URL
 })

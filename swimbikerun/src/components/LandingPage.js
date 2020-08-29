@@ -23,8 +23,9 @@ class LandingPage extends Component {
     }
       componentDidMount = async () =>{
         const allTipsList = await api.getAllTips()
+        console.log('all tips', allTipsList)
         this.setState({
-          allTips: allTipsList,
+          allTips: allTipsList.data,
           displayAllTips : true
         })
         console.log('this.state.allTips', this.state.allTips)
@@ -34,9 +35,9 @@ class LandingPage extends Component {
             <div>
                 <Nav />
                 <Header />
-                { this.state.displayAllTips ?
-                <TipsList tips={this.state.allTips ? this.state.allTips : []} /> :
-                null }
+                {/* { this.state.displayAllTips ? */}
+                <TipsList tips={this.state.allTips ? this.state.allTips : []} />
+                {/* null } */}
             </div>
         )
     }
