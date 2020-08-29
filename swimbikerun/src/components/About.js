@@ -5,6 +5,8 @@ export class About extends Component {
         return (
             <div>
                 <h1>About</h1>
+                <p>Placeholder text</p>
+                {/* need a button */}
             </div>
         )
     }
