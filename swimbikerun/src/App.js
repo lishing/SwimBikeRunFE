@@ -14,7 +14,7 @@ class App extends Component {
               <Route exact path="/" component={LandingPage}/>
               <Route exact path="/about" component={About}/>
               {/* <Route path="/fav" component={FavTips}/> */}
-              <Route exact path="/new" component={TipNew}/>
+              <Route exact path="/tips/new" component={TipNew}/>
             </Switch>
           </div>
         </Router>

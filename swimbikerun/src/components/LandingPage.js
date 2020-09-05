@@ -21,22 +21,35 @@ class LandingPage extends Component {
           allTips: null,
         }
     }
-      componentDidMount = async () =>{
-        const allTipsList = await api.getAllTips()
-        console.log('all tips', allTipsList)
-        this.setState({
-          allTips: allTipsList.data,
-          displayAllTips : true
-        })
-        console.log('this.state.allTips', this.state.allTips)
+    componentDidMount = async () =>{
+      const allTipsList = await api.getAllTips()
+      console.log('all tips', allTipsList)
+      this.setState({
+        allTips: allTipsList.data,
+        displayAllTips : true
+      })
+      console.log('this.state.allTips', this.state.allTips)
     }
+    updateTips = async () => {
+      console.log('updatetipstest')
+      const allTipsList = await api.getAllTips()
+      console.log('all updated tips', allTipsList)
+      this.setState({
+        allTips: allTipsList.data,
+        displayAllTips : true
+      })
+    }
+
     render() {
         return (
             <div>
                 <Nav />
                 <Header />
                 {/* { this.state.displayAllTips ? */}
-                <TipsList tips={this.state.allTips ? this.state.allTips : []} />
+                <TipsList 
+                  tips={this.state.allTips ? this.state.allTips : []} 
+                  updateTips={this.updateTips}
+                />
                 {/* null } */}
             </div>
         )
