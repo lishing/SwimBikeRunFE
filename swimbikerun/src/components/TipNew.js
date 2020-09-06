@@ -29,11 +29,11 @@ class TipNew extends Component {
             tags: this.state.tags, //this cannot be stored when i selected it
             description:this.state.description
         }
-        await axios.post(process.env.REACT_APP_BACKEND_URL+'/tips/new', payload)
+        await axios.post(process.env.REACT_APP_BACKEND_URL+'/tips', payload)
+        //doesn't redirect to '/'
     }
     submitHandler = event =>{
         event.preventDefault()
-        console.log(this.state)
         const submit = api.createNewTip(this.state) 
         if (submit){
             window.location.href = '/'
