@@ -13,10 +13,10 @@ const TipsList = (props) =>{
                     title={tips.title}
                     id={tips._id}
                     description={tips.description}
-                    tags={tips.tags} 
+                    tags={tips.tags}
+                    liked={tips.liked} 
                     updateTips={props.updateTips}
                     handleDelete={handleDelete}
-
                 />
             )}
         </div>

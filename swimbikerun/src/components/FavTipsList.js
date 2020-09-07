@@ -5,7 +5,8 @@ import FavTipsInfo from './FavTipsInfo.js';
 const FavTipsList = (props) =>{
     return(
         <div className="tips-container">
-            {props.favTips.map((tips, index) =>
+            {props.favTips.map((tips, index) =>{
+            if (tips.liked){
                 <FavTipsInfo 
                     key={index}
                     title={tips.title}
@@ -14,7 +15,8 @@ const FavTipsList = (props) =>{
                     tags={tips.tags} 
                     updateTips={props.updateTips}
                 />
-            )}
+            }   
+        })}
         </div>
     )  
 }

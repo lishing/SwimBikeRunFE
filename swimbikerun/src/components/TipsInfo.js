@@ -83,7 +83,7 @@ class TipsInfo extends Component {
                         >
                             View
                         </Card.Link>
-                        <Card.Link onClick={(e)=>this.addToFav(e, this.props.id)}>Add to Favorites</Card.Link>
+                        <Card.Link onClick={(e)=>this.addToFav(e, this.props.id)}>{this.props.liked ? "Your Favorite" : "Add to Favorites"}</Card.Link>
                         <Card.Link onClick={this.deleteTip}>Delete</Card.Link>
                     </Card.Body>
                     <TipsModal 
