@@ -19,5 +19,11 @@ nav{
   list-style: none;
 }
 
+.tips-container{
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px;
+}
 
 
