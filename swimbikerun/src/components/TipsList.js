@@ -3,7 +3,7 @@ import TipsInfo from './TipsInfo.js';
 
 
 const TipsList = (props) =>{
-    console.log("tipslist", props)
+    const handleDelete = (id) =>{props.deleteTip(id)}
     return(
         <div className="tips-container">
 
@@ -15,11 +15,12 @@ const TipsList = (props) =>{
                     description={tips.description}
                     tags={tips.tags} 
                     updateTips={props.updateTips}
+                    handleDelete={handleDelete}
+
                 />
             )}
         </div>
     )  
-}
-
+} 
 
 export default TipsList;

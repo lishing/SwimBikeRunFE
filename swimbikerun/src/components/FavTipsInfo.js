@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
-import TipsModal from './TipsModal.js'
+import FavTipsModal from './FavTipsModal.js'
 import axios from 'axios';
 
 class FavTipsInfo extends Component {
@@ -47,17 +47,20 @@ class FavTipsInfo extends Component {
             id: id,
         });
     }
-    deleteTip = async (event, id) =>{
-        //const id = this.state.id
-        const payload = {
-            title: this.state.title,
-            tags: this.state.tag,
-            description: this.state.description,
-            liked: this.state.liked,
-        }
-        console.log('delete')
-        await axios.delete(process.env.REACT_APP_BACKEND_URL+`/tips/${id}`, payload)
+    removeFromFav(event, id) {
+        this.setState({liked: !this.state.liked})
+        console.log('removeFromFav')
     }
+    // deleteTip = async (event, id) =>{
+    //     //const id = this.state.id
+    //     const payload = {
+    //         title: this.state.title,
+    //         tags: this.state.tag,
+    //         description: this.state.description,
+    //         liked: this.state.liked,
+    //     }
+    //     await axios.delete(process.env.REACT_APP_BACKEND_URL+`/tips/${id}`, payload)
+    // }
     // deleteTip = (event, id) =>{
     //     // const id = this.props.id
     //     fetch(process.env.REACT_APP_BACKEND_URL+`/tips/${id}`, {
@@ -69,11 +72,8 @@ class FavTipsInfo extends Component {
     //         axios.get(process.env.REACT_APP_BACKEND_URL+'/tips')
     //     })
     // }
-    addToFav(event, id) {
-        this.setState({liked: !this.state.liked})
-    }
     render() {
-        console.log('tipsinfo', this.props)
+        console.log('favtipsinfo', this.props)
         return (
             <div className="card-container">
                 <Card style={{ width: '18rem' }}>
@@ -89,10 +89,9 @@ class FavTipsInfo extends Component {
                         >
                             View
                         </Card.Link>
-                        <Card.Link onClick={(e)=>this.addToFav(e, this.props.id)}>Add to Favorites</Card.Link>
-                        <Card.Link onClick={(e)=>this.deleteTip(e, this.props.id)}>Delete</Card.Link>
+                        <Card.Link onClick={(e)=>this.removeFromFav(e, this.props.id)}>Remove from Favorites</Card.Link>
                     </Card.Body>
-                    <TipsModal 
+                    <FavTipsModal 
                         show={this.state.show}
                         handleChange={this.handleChange} 
                         handleUpdate={this.handleUpdate}

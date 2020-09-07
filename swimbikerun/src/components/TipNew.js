@@ -22,7 +22,7 @@ class TipNew extends Component {
             [event.target.name]: event.target.value
         })
     }
-    handleSummit = async (event) =>{
+    handleSubmit = async (event) =>{
         event.preventDefault()
         const payload = {
             title: this.state.title,
@@ -30,21 +30,22 @@ class TipNew extends Component {
             description:this.state.description
         }
         await axios.post(process.env.REACT_APP_BACKEND_URL+'/tips', payload)
-        //doesn't redirect to '/'
+        this.props.history.push('/')
     }
-    submitHandler = event =>{
-        event.preventDefault()
-        const submit = api.createNewTip(this.state) 
-        if (submit){
-            window.location.href = '/'
-        }
-    }
+    // submitHandler = event =>{
+    //     event.preventDefault()
+    //     const submit = api.createNewTip(this.state) 
+    //     if (submit){
+    //         window.location.href = '/'
+    //     }
+    // }
     render() {
+        console.log('TIPNEW', this.props.history)
         const { title, tags, description } = this.state
         return (
             <div>
                 <h1>Add a new tip</h1>
-                <Form onSubmit={this.submitHandler}> 
+                <Form onSubmit={this.handleSubmit}> 
                 <Form.Group controlId="title-new" className="new-container">
                     <Form.Label>Title</Form.Label>
                     <Form.Control type="text" placeholder="enter a short title" name="title" value={title} onChange={this.handleChange}/>
@@ -62,7 +63,7 @@ class TipNew extends Component {
                     <Form.Control as="textarea" rows="3" placeholder="describe in more details" name="description" value={description} onChange={this.handleChange} />
                 </Form.Group>
                 <p>
-                    <Button onClick={this.handleSummit} className="btn btn-primary">Submit</Button>
+                    <Button type="submit" className="btn btn-primary">Submit</Button>
                 </p>
                 </Form>
                 <Link to="/">

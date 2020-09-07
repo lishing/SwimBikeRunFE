@@ -8,10 +8,12 @@ const api = Axios.create({
 
 const createNewTip = payload => api.post('/new', payload);
 const getAllTips = () => api.get('/tips');
+const deleteTip = (id) => api.delete(`/tips/${id}`);
 
 const apis = {
     createNewTip,
-    getAllTips
+    getAllTips,
+    deleteTip
 }
 
 export default apis

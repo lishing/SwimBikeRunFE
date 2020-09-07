@@ -47,17 +47,11 @@ class TipsInfo extends Component {
             id: id,
         });
     }
-    deleteTip = async (event, id) =>{
-        //const id = this.state.id
-        const payload = {
-            title: this.state.title,
-            tags: this.state.tag,
-            description: this.state.description,
-            liked: this.state.liked,
-        }
-        console.log('delete')
-        await axios.delete(process.env.REACT_APP_BACKEND_URL+`/tips/${id}`, payload)
+    deleteTip = async (event) =>{
+        event.preventDefault()
+        this.props.handleDelete(this.props.id)
     }
+
     // deleteTip = (event, id) =>{
     //     // const id = this.props.id
     //     fetch(process.env.REACT_APP_BACKEND_URL+`/tips/${id}`, {
@@ -90,7 +84,7 @@ class TipsInfo extends Component {
                             View
                         </Card.Link>
                         <Card.Link onClick={(e)=>this.addToFav(e, this.props.id)}>Add to Favorites</Card.Link>
-                        <Card.Link onClick={(e)=>this.deleteTip(e, this.props.id)}>Delete</Card.Link>
+                        <Card.Link onClick={this.deleteTip}>Delete</Card.Link>
                     </Card.Body>
                     <TipsModal 
                         show={this.state.show}
