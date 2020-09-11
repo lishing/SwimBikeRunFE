@@ -4,6 +4,10 @@ import TipsInfo from './TipsInfo.js';
 
 const TipsList = (props) =>{
     const handleDelete = (id) =>{props.deleteTip(id)}
+    const addToFav = (id) =>{
+        props.addToFav(id)
+    }
+    
     return(
         <div className="tips-container">
 
@@ -17,6 +21,7 @@ const TipsList = (props) =>{
                     liked={tips.liked} 
                     updateTips={props.updateTips}
                     handleDelete={handleDelete}
+                    handleAddToFav={addToFav}
                 />
             )}
         </div>

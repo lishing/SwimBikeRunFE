@@ -11,7 +11,8 @@ class FavTipsInfo extends Component {
             show: false,
             displayOneTip:null, 
             title: this.props.title,
-            description: this.props.description
+            description: this.props.description,
+            liked: this.props.liked
         }
     }
     handleChange = event => {
@@ -24,7 +25,8 @@ class FavTipsInfo extends Component {
         const payload = {
             title: this.state.title,
             tags: this.state.tag,
-            description: this.state.description
+            description: this.state.description,
+            liked: this.state.liked
         }
         await axios.put(process.env.REACT_APP_BACKEND_URL+`/tips/${id}`, payload)
         // await this.toggleClose(event)

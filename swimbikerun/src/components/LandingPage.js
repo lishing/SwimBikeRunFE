@@ -46,6 +46,15 @@ class LandingPage extends Component {
         displayAllTips : true
       })
     }
+    addToFav = async(id) =>{
+      console.log(id)
+      await api.addToFav(id)
+      const allTipsList = await api.getAllTips()
+      this.setState({
+        allTips: allTipsList.data,
+        displayAllTips : true
+      })
+    }
 
     render() {
         return (
@@ -55,7 +64,9 @@ class LandingPage extends Component {
                 {/* { this.state.displayAllTips ? */}
                 <TipsList 
                   tips={this.state.allTips ? this.state.allTips : []} 
-                  updateTips={this.updateTips} deleteTip={this.deleteTip}
+                  updateTips={this.updateTips} 
+                  deleteTip={this.deleteTip}
+                  addToFav={this.addToFav}
                 />
                 {/* null } */}
             </div>

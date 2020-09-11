@@ -64,10 +64,15 @@ class TipsInfo extends Component {
     //     })
     // }
     addToFav(event, id) {
-        this.setState({liked: !this.state.liked})
+        //this.setState({liked: !this.state.liked})
+        event.preventDefault()
+        console.log(id)
+        this.props.handleAddToFav(id)
     }
+    
     render() {
-        console.log('tipsinfo', this.props)
+        // console.log('tipsinfo', this.props)
+        // console.log(this.props.id)
         return (
             <div className="card-container">
                 <Card style={{ width: '18rem' }}>
@@ -84,6 +89,7 @@ class TipsInfo extends Component {
                             View
                         </Card.Link>
                         <Card.Link onClick={(e)=>this.addToFav(e, this.props.id)}>{this.props.liked ? "Your Favorite" : "Add to Favorites"}</Card.Link>
+                        {/* <Card.Link onClick={this.addToFav}>{this.props.liked ? "Your Favorite" : "Add to Favorites"}</Card.Link> */}
                         <Card.Link onClick={this.deleteTip}>Delete</Card.Link>
                     </Card.Body>
                     <TipsModal 

@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import About from './components/About.js';
 import LandingPage from './components/LandingPage.js';
 import TipNew from './components/TipNew.js';
-import FavTipsInfo from './components/FavTipsInfo.js';
+import FavTipsList from './components/FavTipsList.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import FavTipsInfo from './components/FavTipsInfo';
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={LandingPage}/>
               <Route exact path="/about" component={About}/>
-              <Route path="/tips/liked" component={FavTipsInfo}/>
+              <Route path="/tips/liked" component={FavTipsList}/>
               <Route exact path="/tips/new" component={TipNew}/>
             </Switch>
           </div>
