@@ -1,6 +1,6 @@
 # Swim Bike Run - App for new Triathletes
 ## Introduction
-I am new to triathlon and I don't know where to start, which interest group to connect with, and how different it is to other sports. I boiled it down to 2-3 categories as MVP: equipment, training, and diet</br>
+I am new to triathlon and I don't know where to start, which interest group to connect with, and how different it is to other sports. I boiled it down to 2-3 categories as MVP: equipment, training, and diet https://swimbikerun.netlify.app/ </br>
 
 ## Methodology and Approach
 ### Principles
