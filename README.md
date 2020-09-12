@@ -42,4 +42,4 @@ The MVP of the app will have features for user to:
 ## Learnings
 1. Using react router to render page on the header
 2. Using functional vs class component to map props out
-3. CORS issue - setting up .env better
+3. CORS issue - setting up .env to be condusive for hosting on Heroku 
