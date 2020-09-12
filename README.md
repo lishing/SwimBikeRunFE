@@ -21,6 +21,7 @@ The MVP of the app will have features for user to:
 3. MongoDB Atlas Cluster, to store database. It is hosted on Azure
 4. Heroku to host the backend application
 5. Netlify to host the website
+6. Axios 
 
 ## User Journey
 ### User Journey 1
